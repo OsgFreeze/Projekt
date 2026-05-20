@@ -1,0 +1,3 @@
+Prompt shortening Tool for my Bachelor Thesis
+
+in developement ...
