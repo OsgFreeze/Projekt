@@ -9,13 +9,14 @@ from app.services.refinement.refinement_service import RefinementService
 from app.services.prompt_generation.prompt_generation_service import PromptGenerationService
 
 from app.models.response_models import PreprocessingResponse, ExtractionResponse, ClassificationResponse, RefinementResponse
+from app.models.request_models import ProcessPromptRequest
 
 router = APIRouter()
 orchestrator = ProcessingOrchestrator()
 
 @router.post("/process")
-def process_prompt(text: str):
-    result = orchestrator.process(text)
+def process_prompt(request: ProcessPromptRequest):
+    result = orchestrator.process(request.text)
     return result
 
 @router.post("/preprocessing")
