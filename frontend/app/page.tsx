@@ -18,7 +18,7 @@ export default function Home() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/process", {
+      const response = await fetch("http://127.0.0.1:8000/api/process_v2", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

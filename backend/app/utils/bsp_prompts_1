@@ -1,0 +1,51 @@
+Entwickle ein Python-Programm, das eine CSV-Datei mit privaten Haushaltsausgaben einliest. Daraus eine verständliche Monatsauswertung erzeugt. Die CSV-Datei soll die Spalten datum, kategorie, beschreibung und betrag enthalten. Das Datum liegt im Format YYYY-MM-DD vor. Der Betrag ist eine Dezimalzahl und kann positiv oder negativ sein. Das Programm soll die Datei zeilenweise einlesen. Ungültige Zeilen erkennen und überspringen, ohne das Programm zu beenden. Anschließend sollen alle Ausgaben nach Monat und Kategorie gruppiert werden. Für jeden Monat soll ausgegeben werden: wie viel insgesamt ausgegeben wurde, welche Kategorie den höchsten Betrag verursacht hat, welche einzelnen Buchungen zu dieser Kategorie gehören. Zusätzlich soll das Programm eine einfache Textausgabe auf der Konsole erzeugen, die sauber formatiert ist und Beträge mit zwei Nachkommastellen darstellt. Verwende geeignete Funktionen, um das Einlesen, Validieren, Gruppieren und Ausgeben klar voneinander zu trennen. Das Programm soll ohne externe Bibliotheken funktionieren.
+
+
+Entwickle ein Python-Programm. Das Programm soll eine CSV-Datei mit privaten Haushaltsausgaben einlesen. Die CSV-Datei soll die Spalten datum, kategorie, beschreibung und betrag enthalten. Das Datum liegt im Format YYYY-MM-DD vor. Der Betrag ist eine Dezimalzahl. Der Betrag kann positiv oder negativ sein. Das Programm soll die Datei zeilenweise einlesen. Das Programm soll ungültige Zeilen erkennen. Ungültige Zeilen sollen übersprungen werden. Das Programm darf bei ungültigen Zeilen nicht beendet werden. Das Programm soll alle Ausgaben nach Monat gruppieren. Das Programm soll alle Ausgaben nach Kategorie gruppieren. Für jeden Monat soll die gesamte Ausgabensumme ausgegeben werden. Für jeden Monat soll die Kategorie mit dem höchsten Betrag ausgegeben werden. Für jeden Monat sollen die einzelnen Buchungen dieser Kategorie ausgegeben werden. Das Programm soll eine einfache Textausgabe auf der Konsole erzeugen. Die Ausgabe soll sauber formatiert sein. Beträge sollen mit zwei Nachkommastellen dargestellt werden. Verwende geeignete Funktionen für das Einlesen der Daten. Verwende geeignete Funktionen für die Validierung der Daten. Verwende geeignete Funktionen für die Gruppierung der Daten. Verwende geeignete Funktionen für die Ausgabe der Ergebnisse. Diese Aufgaben sollen klar voneinander getrennt sein. Das Programm soll ohne externe Bibliotheken funktionieren.
+
+
+Entwickle ein Python-Programm.
+Das Programm soll eine CSV-Datei mit privaten Haushaltsausgaben einlesen. 
+Die CSV-Datei soll die Spalten datum, kategorie, beschreibung und betrag enthalten. 
+Das Datum liegt im Format YYYY-MM-DD vor. 
+Der Betrag ist eine Dezimalzahl. 
+Der Betrag kann positiv oder negativ sein. 
+Das Programm soll die Datei zeilenweise einlesen. 
+Das Programm soll ungültige Zeilen erkennen. 
+Ungültige Zeilen sollen übersprungen werden. 
+Das Programm darf bei ungültigen Zeilen nicht beendet werden. 
+Das Programm soll alle Ausgaben nach Monat gruppieren. 
+Das Programm soll alle Ausgaben nach Kategorie gruppieren. 
+Für jeden Monat soll die gesamte Ausgabensumme ausgegeben werden. 
+Für jeden Monat soll die Kategorie mit dem höchsten Betrag ausgegeben werden. 
+Für jeden Monat sollen die einzelnen Buchungen dieser Kategorie ausgegeben werden. 
+Das Programm soll eine einfache Textausgabe auf der Konsole erzeugen. 
+Die Ausgabe soll sauber formatiert sein. 
+Beträge sollen mit zwei Nachkommastellen dargestellt werden. 
+Verwende geeignete Funktionen für das Einlesen der Daten. 
+Verwende geeignete Funktionen für die Validierung der Daten. 
+Verwende geeignete Funktionen für die Gruppierung der Daten. 
+Verwende geeignete Funktionen für die Ausgabe der Ergebnisse. 
+Diese Aufgaben sollen klar voneinander getrennt sein. 
+Das Programm soll ohne externe Bibliotheken funktionieren.
+
+
+Entwickle ein Python-Programm.
+Das Programm soll eine CSV-Datei einlesen.
+Die CSV-Datei soll die Spalten datum, kategorie, beschreibung und betrag enthalten.
+Das Datum liegt im Format YYYY-MM-DD vor.
+Der Betrag ist eine Dezimalzahl und kann positiv oder negativ sein.
+Das Programm soll die Datei zeilenweise einlesen.
+Ungültige Zeilen sollen erkannt und übersprungen werden.
+Das Programm soll ohne das Programm zu beenden, fortgesetzt werden.
+Alle Ausgaben nach Monat und Kategorie sollen gruppiert werden.
+Für jeden Monat soll ausgegeben werden, wie viel insgesamt ausgegeben wurde.
+Welche Kategorie den höchsten Betrag verursacht hat, soll ausgegeben werden.
+Welche einzelnen Buchungen zu dieser Kategorie gehören, sollen ausgegeben werden.
+Das Programm soll eine einfache Textausgabe auf der Konsole erzeugen.
+Die Textausgabe soll sauber formatiert sein und Beträge mit zwei Nachkommastellen darstellen.
+Verwende geeignete Funktionen, um das Einlesen klar voneinander zu trennen.
+Validieren klar voneinander zu trennen.
+Gruppieren klar voneinander zu trennen.
+Ausgeben klar voneinander zu trennen.
+Das Programm soll ohne externe Bibliotheken funktionieren.

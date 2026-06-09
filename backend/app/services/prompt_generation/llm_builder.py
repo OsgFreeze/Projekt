@@ -28,8 +28,7 @@ class LLMBuilder:
                 }
             ],
             options={
-                "temperature": self.temperature,
-                "num_predict": 80
+                "temperature": self.temperature
             }
         )
 
@@ -49,7 +48,12 @@ class LLMBuilder:
             text = candidate.text
 
             lines.append(f"[{role}]: {text}")
+            #lines.append(f"- {text}")
 
         lines.append("\n Erzeuge daraus einen kurzen kompakten Coding-Prompt.")
+        #lines.append("\n Integriere nur den Text. Die Rollen dürfen NICHT im Prompt enthalten sein.")
+
+        text = "\n".join(lines)
+        print(text)
 
         return "\n".join(lines)
