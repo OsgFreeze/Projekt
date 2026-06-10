@@ -41,22 +41,3 @@ Vor der Ausgabe prüfen:
 Ziel:
 Maximale Informationsdichte bei minimaler Wortanzahl.
 """
-
-USER_PROMPT = """
-Komprimiere den folgenden Prompt.
-
-Regeln:
-- Alle Anforderungen erhalten.
-- Keine Informationen hinzufügen.
-- Keine Informationen entfernen.
-- Ausgabe in genau einer Zeile.
-- Nur kommagetrennte Einträge.
-- Keine Nummerierung.
-- Keine Aufzählungszeichen.
-- Keine Einleitung.
-- Keine Erklärung.
-
-Original Prompt:
-
-{{original_prompt}}
-"""

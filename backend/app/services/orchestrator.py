@@ -5,6 +5,7 @@ from app.services.refinement.refinement_service import RefinementService
 from app.services.prompt_generation.prompt_generation_service import PromptGenerationService
 from app.services.evaluation.evaluation_service import EvaluationService
 from app.services.transformation.transformation_service import TransformationService
+from app.services.fullgen.generation_service import GenerationService
 
 class ProcessingOrchestrator:
     def __init__(self):
@@ -15,6 +16,7 @@ class ProcessingOrchestrator:
         self.refinement = RefinementService()
         self.prompt_generation = PromptGenerationService()
         self.evaluation = EvaluationService()
+        self.generation = GenerationService()
 
     def process(self, text: str):
         preprocessed = self.preprocessing.preprocess(text)
@@ -36,3 +38,8 @@ class ProcessingOrchestrator:
         evaluated = self.evaluation.evaluate(preprocessed, refined, generated_prompt)
 
         return evaluated
+    
+    def process_v3(self, text: str):
+        generated = self.generation.generate(text)
+        
+        return generated

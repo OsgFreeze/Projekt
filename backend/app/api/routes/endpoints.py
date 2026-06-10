@@ -26,6 +26,11 @@ def process_prompt_v2(request: ProcessPromptRequest):
     result = orchestrator.process_v2(request.text)
     return result
 
+@router.post("/process_v3")
+def process_prompt_v3(request: ProcessPromptRequest):
+    result = orchestrator.process_v3(request.text)
+    return result
+
 @router.post("/preprocessing")
 def test_preprocessing(text: str):
     service = PreprocessingService()
