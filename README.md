@@ -2,16 +2,14 @@ Prompt shortening Tool for my Bachelor Thesis
 
 Startup
 
-Frontend:
+Ctrl + Shift + P
+Tasks: Run Task
+Start Full Stack
 
-    cd frontend
-    npm run dev
+or
 
-Backend:
-
-    cd backend
-    uvicorn app.main:app --reload
-
+Run and Debug Tab (Ctrl + Shift + D)
+Start Debugging (F5) 
 
 in developement ...
 
