@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Start Full Stack",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "echo",
+            "runtimeArgs": [
+                "Starting..."
+            ],
+            "preLaunchTask": "Start Full Stack"
+        }
+    ]
+}
