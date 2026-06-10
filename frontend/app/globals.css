@@ -798,3 +798,58 @@ textarea:focus {
     justify-content: flex-start;
   }
 }
+
+.verticalSettingsCard {
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.endpointOptions {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+}
+
+.radioOption input {
+  accent-color: var(--purple);
+}
+
+.radioOption span {
+  display: grid;
+  gap: 4px;
+}
+
+.radioOption strong {
+  font-size: 15px;
+}
+
+.radioOption small {
+  color: var(--muted);
+  word-break: break-all;
+}
+
+.endpointInput {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text);
+  outline: none;
+}
+
+.endpointInput:focus {
+  border-color: #c4b5fd;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+}

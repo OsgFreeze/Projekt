@@ -1,15 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ApiResponse, UiResponse, mapApiToUi } from "@/types/prompt";
 import { savePromptResult } from "@/lib/promptResultStore";
 import { getSettings } from "@/lib/settingsStore";
+import { getActiveApiEndpoint } from "@/types/settings";
+import { clearDraftPrompt, getDraftPrompt, saveDraftPrompt } from "@/lib/draftPromptStore";
 
 export default function Home() {
   const [prompt, setPrompt] = useState(
     ""
   );
+
+  useEffect(() => {
+    const savedPrompt = getDraftPrompt();
+
+    if (savedPrompt) {
+      setPrompt(savedPrompt);
+    }
+  }, []);
+
+  function handlePromptChange(value: string) {
+    setPrompt(value);
+    saveDraftPrompt(value);
+  }
 
   const [result, setResult] = useState<UiResponse | null>(null);
   const [loading, setLoading] = useState(false);
@@ -18,7 +33,9 @@ export default function Home() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/process_v2", {
+      const settings = getSettings();
+      const endpoint = getActiveApiEndpoint(settings);
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,7 +51,6 @@ export default function Home() {
 
       const data: ApiResponse = await response.json()
       const uiResult = mapApiToUi(data);
-      const settings = getSettings();
 
       setResult(uiResult);
       savePromptResult(uiResult, settings.saveHistory);
@@ -71,12 +87,12 @@ export default function Home() {
 
           <textarea
             value={prompt}
-            onChange={(event) => setPrompt(event.target.value)}
+            onChange={(event) => handlePromptChange(event.target.value)}
             placeholder="Gib deinen Prompt ein..."
           />
 
           <div className="cardActions">
-            <button className="ghostButton" onClick={() => setPrompt("")}>
+            <button className="ghostButton" onClick={() => {setPrompt(""); clearDraftPrompt();}}>
               Zurücksetzen
             </button>
 
