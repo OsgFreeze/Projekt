@@ -23,7 +23,7 @@ class ProcessingOrchestrator:
         extracted = self.extraction.extract(preprocessed)
         classified = self.classification.classify(extracted)
         refined = self.refinement.refine(classified)
-        generated_prompt = self.prompt_generation.generate(refined)
+        generated_prompt = self.prompt_generation.generate(refined, False)
         evaluated = self.evaluation.evaluate(preprocessed, refined, generated_prompt)
 
         return evaluated
@@ -34,7 +34,7 @@ class ProcessingOrchestrator:
         extracted = self.extraction.extract(preprocessed)
         classified = self.classification.classify(extracted)
         refined = self.refinement.refine(classified)
-        generated_prompt = self.prompt_generation.generate(refined)
+        generated_prompt = self.prompt_generation.generate(refined, False)
         evaluated = self.evaluation.evaluate(preprocessed, refined, generated_prompt)
 
         return evaluated

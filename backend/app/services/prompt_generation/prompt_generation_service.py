@@ -8,7 +8,7 @@ class PromptGenerationService:
         self.template_builder = TemplateBuilder()
         self.llm_builder = LLMBuilder()
 
-    def generate(self, refinement_response: RefinementResponse, use_llm: bool = False) -> PromptGenerationResponse:
+    def generate(self, refinement_response: RefinementResponse, use_llm: bool) -> PromptGenerationResponse:
 
         refined_candidates = refinement_response.refined_candidates
 
