@@ -5,11 +5,15 @@ import { useEffect, useState } from "react";
 import { UiResponse } from "@/types/prompt";
 import { getPromptResult } from "@/lib/promptResultStore";
 
-function formatPercent(value: number) {
+function formatPercent(value?: number | null) {
+  if (typeof value !== "number") return "--";
+
   return `${value.toFixed(1)}%`;
 }
 
-function formatNumber(value: number) {
+function formatNumber(value?: number |null) {
+  if (typeof value !== "number") return "--";
+  
   return Number.isInteger(value) ? value.toString() : value.toFixed(2);
 }
 

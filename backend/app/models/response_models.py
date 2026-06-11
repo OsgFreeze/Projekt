@@ -125,10 +125,3 @@ class EvaluationResponse(BaseModel):
     prompt_length_reduction_percent: float
 
     metadata: Dict = Field(default_factory=dict)
-
-
-###  Generation  ###
-
-class GenerationResponse(BaseModel):
-    original_prompt: str
-    generated_prompt: str

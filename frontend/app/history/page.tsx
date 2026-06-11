@@ -20,7 +20,9 @@ function formatDate(value: string) {
   }).format(new Date(value));
 }
 
-function truncate(value: string, maxLength = 140) {
+function truncate(value?: string | null, maxLength = 140) {
+  if (!value) return "--";
+  
   if (value.length <= maxLength) return value;
 
   return `${value.slice(0, maxLength)}...`;
@@ -41,8 +43,8 @@ export default function HistoryPage() {
 
     return history.filter((item) => {
       return (
-        item.stats.originalPrompt.toLowerCase().includes(normalizedSearch) ||
-        item.improvedPrompt.toLowerCase().includes(normalizedSearch)
+        (item.stats.originalPrompt ?? "").toLowerCase().includes(normalizedSearch) ||
+        (item.improvedPrompt ?? "").toLowerCase().includes(normalizedSearch)
       );
     });
   }, [history, search]);
