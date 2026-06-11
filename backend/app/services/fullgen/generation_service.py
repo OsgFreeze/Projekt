@@ -64,13 +64,13 @@ class GenerationService:
 
             compression_ratio=self.es.safe_div(final_tokens, original_tokens),
 
-            original_candidate_count=None,
-            final_candidate_count=None,
+            original_candidate_count=-1,
+            final_candidate_count=-1,
 
-            role_coverage=None,
+            role_coverage={},
             role_coverage_percent={},
 
-            semantic_retention=None,
+            semantic_retention=-1,
 
             prompt_length_chars_original=len(original_prompt),
             prompt_length_chars_final=len(generated_prompt),
