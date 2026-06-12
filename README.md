@@ -1,6 +1,6 @@
 Prompt shortening Tool for my Bachelor Thesis
 
-Startup
+Startup:
 
 Ctrl + Shift + P
 Tasks: Run Task
@@ -10,6 +10,10 @@ or
 
 Run and Debug Tab (Ctrl + Shift + D)
 Start Debugging (F5) 
+
+and
+
+run 'ollama' in terminal 
 
 in developement ...
 
