@@ -82,3 +82,9 @@ export function clearPromptHistory() {
   localStorage.removeItem(HISTORY_STORAGE_KEY);
   localStorage.removeItem(LATEST_STORAGE_KEY);
 }
+
+export function clearLatestPromptResult() {
+  if (typeof window === "undefined") return;
+
+  localStorage.removeItem(LATEST_STORAGE_KEY);
+}

@@ -3,15 +3,23 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ApiResponse, UiResponse, mapApiToUi } from "@/types/prompt";
-import { savePromptResult } from "@/lib/promptResultStore";
+import { getPromptResult, savePromptResult, clearLatestPromptResult } from "@/lib/promptResultStore";
 import { getSettings } from "@/lib/settingsStore";
 import { getActiveApiEndpoint } from "@/types/settings";
 import { clearDraftPrompt, getDraftPrompt, saveDraftPrompt } from "@/lib/draftPromptStore";
 
 export default function Home() {
-  const [prompt, setPrompt] = useState(
-    ""
-  );
+  const [prompt, setPrompt] = useState("");
+  const [result, setResult] = useState<UiResponse | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const latestResult = getPromptResult();
+
+    if (latestResult) {
+      setResult(latestResult);
+    }
+  }, []);
 
   useEffect(() => {
     const savedPrompt = getDraftPrompt();
@@ -26,8 +34,7 @@ export default function Home() {
     saveDraftPrompt(value);
   }
 
-  const [result, setResult] = useState<UiResponse | null>(null);
-  const [loading, setLoading] = useState(false);
+  
 
   async function improvePrompt() {
     setLoading(true);
@@ -92,7 +99,15 @@ export default function Home() {
           />
 
           <div className="cardActions">
-            <button className="ghostButton" onClick={() => {setPrompt(""); clearDraftPrompt();}}>
+            <button 
+              className="ghostButton" 
+              onClick={() => {
+                setPrompt(""); 
+                setResult(null);
+                clearDraftPrompt();
+                clearLatestPromptResult();
+              }}
+            >
               Zurücksetzen
             </button>
 

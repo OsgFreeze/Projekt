@@ -17,6 +17,42 @@ function formatNumber(value?: number |null) {
   return Number.isInteger(value) ? value.toString() : value.toFixed(2);
 }
 
+function exportStatsAsJson(result: UiResponse) {
+  const exportData = {
+    id: result.id,
+    
+    improvedPrompt: result.improvedPrompt,
+    
+    tokens: {
+      original: result.originalTokens,
+      improved: result.improvedTokens,
+      reduction: result.stats.tokenReduction,
+      reductionPercent: result.stats.tokenReductionPercent,
+    },
+
+    words: {
+      original: result.stats.originalWordCount,
+      final: result.stats.finalWordCount,
+      reduction: result.stats.wordReduction,
+      reductionPercent: result.stats.wordReductionPercent,
+    },
+
+    metadata: result.stats.metadata,
+  }
+
+
+  const json = JSON.stringify(exportData, null, 2);
+  const blob = new Blob([json], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `prompt-stats-${result.id}.json`;
+  link.click();
+
+  URL.revokeObjectURL(url);
+}
+
 export default function StatsPage() {
   const [result, setResult] = useState<UiResponse | null>(null);
 
@@ -47,12 +83,21 @@ export default function StatsPage() {
 
   return (
     <main className="page">
-      <section className="hero">
-        <p className="eyebrow">Prompt Analyse</p>
-        <h1>Statistiken</h1>
-        <p className="subtitle">
-          Alle Messwerte der letzten Prompt-Optimierung auf einen Blick.
-        </p>
+      <section className="hero statsHero">
+        <div>
+          <p className="eyebrow">Prompt Analyse</p>
+          <h1>Statistiken</h1>
+          <p className="subtitle">
+            Alle Messwerte der letzten Prompt-Optimierung auf einen Blick.
+          </p>
+        </div>
+
+        <button
+          className="primaryButton exportButton"
+          onClick={() => exportStatsAsJson(result)}
+        >
+          JSON exportieren
+        </button>
       </section>
 
       <section className="statsGrid">

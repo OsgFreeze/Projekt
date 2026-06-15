@@ -853,3 +853,21 @@ textarea:focus {
   border-color: #c4b5fd;
   box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
 }
+
+.statsHero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.exportButton {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 720px) {
+  .statsHero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
