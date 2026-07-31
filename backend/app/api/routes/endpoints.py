@@ -54,7 +54,7 @@ def test_refinement(classification_response: ClassificationResponse):
 @router.post("/prompt_generation")
 def test_prompt_generation(refinement_response: RefinementResponse):
     service = PromptGenerationService()
-    return service.generate(refinement_response)
+    return service.generate(refinement_response, False)
 
 @router.post("/transform")
 def test_transformation(text: str):
