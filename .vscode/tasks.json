@@ -2,6 +2,19 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Ollama",
+            "type": "shell",
+            "command": "powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\.vscode\\start-ollama.ps1"
+            ],
+            "problemMatcher": []
+        },
+        {
             "label": "Backend",
             "type": "shell",
             "command": "uvicorn app.main:app --reload",
@@ -20,12 +33,20 @@
             "isBackground": true
         },
         {
-            "label": "Start Full Stack",
+            "label": "App",
             "dependsOn": [
                 "Backend",
                 "Frontend"
             ],
             "dependsOrder": "parallel"
+        },
+        {
+            "label": "Start Full Stack",
+            "dependsOn": [
+                "Ollama",
+                "App"
+            ],
+            "dependsOrder": "sequence"
         }
     ]
 }
